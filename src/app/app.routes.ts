@@ -7,14 +7,11 @@ export const routes: Routes = [
     },
 
     {
-        path:'crear-tarea',loadComponent: () => import('../app/crear-tarea/crear-tarea.component').then(m=>m.CrearTareaComponent)
+        path:'crear-tarea',loadComponent: () => import('../app/screens/crear-tarea/crear-tarea.component').then(m=>m.CrearTareaComponent)
     },
     {
-        path:'listar-tarea',loadComponent: () => import('../app/listar-tareas/listar-tareas.component').then(m=>m.ListarTareasComponent)
+        path:'listar-tarea',loadComponent: () => import('../app/screens/listar-tareas/listar-tareas.component').then(m=>m.ListarTareasComponent)
     },
-
-    // { path: 'crear-tarea', component: CrearTareaComponent },
-    // { path: 'listar-tareas', component: ListarTareasComponent },
    
     {
         path:'',

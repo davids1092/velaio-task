@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AppMaterialModule } from '../app_material/app-material';
+
 import { CommonModule } from '@angular/common';
-import { ServicesService } from '../services/services.service';
-import { Alerts } from '../services/Alerts';
+
+
 import { Router } from '@angular/router';
+import { Alerts } from '../../services/Alerts';
+import { AppMaterialModule } from '../../app_material/app-material';
+import { ServicesService } from '../../services/services.service';
 
 @Component({
   selector: 'app-crear-tarea',
