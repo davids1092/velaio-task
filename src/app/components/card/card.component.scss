@@ -6,6 +6,10 @@
       gap: 1rem;
       padding: 1rem;
     }
+    mat-card-title{
+      display: flex;
+      align-items: center;
+    }
     .container-buttons{
         margin-top: 20px;
         width: 100%;
@@ -29,6 +33,20 @@
 
       .person{
         margin-bottom: 20px;
+
+
+       
+      }
+      .hability{
+        display: flex;
+        align-items: center;
+        p{
+          margin: 0;
+        }
+      }
+      .name{
+        display: flex;
+        align-items: center;
       }
       .green{
         color: green;

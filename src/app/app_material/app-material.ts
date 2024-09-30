@@ -10,7 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-
+import {MatTooltipModule} from '@angular/material/tooltip'; 
 @NgModule({
     imports:[
         MatIconModule,
@@ -23,7 +23,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatCardModule,
         MatNativeDateModule,
         MatOptionModule,
-        MatSelectModule
+        MatSelectModule,
+        MatTooltipModule
 
     ],
     exports:[
@@ -37,7 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatCardModule,
         MatNativeDateModule,
         MatOptionModule,
-        MatSelectModule
+        MatSelectModule,
+        MatTooltipModule
     ]
 })
 

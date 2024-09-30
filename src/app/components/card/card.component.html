@@ -1,22 +1,27 @@
 <mat-card class="task-card">
       
     <mat-card-header>
-      <mat-card-title>{{ tarea.nombreTarea }}</mat-card-title>
+      <mat-card-title>{{ tarea.nombreTarea | uppercase }}       <mat-icon>poll</mat-icon></mat-card-title>
       <mat-card-subtitle>Fecha Límite: {{ tarea.fechaLimite | date:'dd-MM-yyyy' }}</mat-card-subtitle>
+
     </mat-card-header>
 
     <mat-card-content>
       <p [ngClass]="{'green':tarea.estado,'red':!tarea.estado}">Estado: {{ tarea.estado ? 'Completada' : 'Pendiente' }}</p>
+     
 
       <div  *ngIf="tarea.personasAsignadas.length > 0">
         <h4>Personas Asociadas:</h4>
         <ul >
           <li class="person" *ngFor="let persona of tarea.personasAsignadas">
-            {{ persona.nombreCompleto }} ({{ persona.edad }} años)
+            <div class="name">
+              {{ persona.nombreCompleto }} ({{ persona.edad }} años)  <mat-icon>sentiment_satisfied</mat-icon>
+            </div>
+          
             <div *ngIf="persona.habilidades.length > 0">
               <h5>Habilidades:</h5>
               <ul>
-                <li *ngFor="let habilidad of persona.habilidades">{{ habilidad }}</li>
+                <li  *ngFor="let habilidad of persona.habilidades"> {{ habilidad }} </li>
               </ul>
             </div>
           </li>

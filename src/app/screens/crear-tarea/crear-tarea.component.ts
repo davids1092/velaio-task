@@ -76,7 +76,7 @@ export class CrearTareaComponent implements OnInit {
   nuevaPersona(): FormGroup {
     return this.fb.group({
       nombreCompleto: ['', [Validators.required, Validators.minLength(5)]],
-      edad: ['', [Validators.required, Validators.min(18)]],
+      edad: ['', [Validators.required, Validators.min(18),Validators.pattern('^[0-9]+$')]],
       habilidades: this.fb.array([this.fb.control('', Validators.required)]) // Al menos una habilidad
     });
   }
@@ -112,5 +112,31 @@ export class CrearTareaComponent implements OnInit {
   }
   ir(path:string){
     this.router.navigateByUrl(path)
+  }
+
+  // metodo q devuelve los errores para los campos
+  
+  getErrorMessage(fieldFormGroup: { errors: any }) {
+
+    const ERROR = fieldFormGroup.errors;
+    // console.log(ERROR)
+    let message = '';
+    if (ERROR['required']) {
+      message = 'Debe ingresar este campo';
+    } else if (ERROR['email']) {
+      message = 'Debe ingresar una dirección de email válida';
+
+    }else if ( ERROR['pattern']) {
+      message = 'Valor inválido';
+    }else if(ERROR['minlength']){
+      message = `mínimo de caracteres ${ERROR.minlength.requiredLength}`;
+    }
+    else if(ERROR['maxlength'] ){
+      message = 'máximo de caracteres invalido';
+    }
+    else if(ERROR['min'] ){
+      message = 'Edad minima 18 años';
+    }
+    return message;
   }
 }
