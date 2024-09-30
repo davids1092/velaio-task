@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Tareas</h1>
+  <div class="filter">
+    
+    <mat-form-field>
+      <mat-label>Filtrar</mat-label>
+      <mat-select [formControl]="filter">
+        <mat-option *ngFor="let i of options" [value]="i.key">{{i.value}}</mat-option>
+      </mat-select>
+    </mat-form-field> 
+    <div class="cancel">
+      <mat-icon>home</mat-icon>
+      <a (click)="ir('home')">Volver</a>
+    </div>
+  </div>
+  <div class="task-list" *ngIf="tareas.length != 0">
+    <div class="container-btn">
+      <button (click)="ir('crear-tarea')" class="btn">Crear otra tarea</button>
+    </div>
+
+    <div *ngFor="let tarea of tareas" class="task-card" >
+      <app-card [tarea]="tarea" (delete)="deleteTask($event)" (estado)="changeState($event)"></app-card>
+    </div>
+ 
+  </div>
+
+  <div class="empty-data" *ngIf="tareas.length == 0">
+
+    <p>No hay tareas existentes</p>
+    <button (click)="ir('crear-tarea')" class="btn">Crear tarea</button>
+
+  </div>
+  
+
+ 
+</div>
+
+
+  

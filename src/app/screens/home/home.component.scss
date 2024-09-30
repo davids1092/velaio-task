@@ -1,0 +1,85 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    background-image: url('../../../assets/img/fondo.png') ;
+    background-repeat: no-repeat;
+    background-position: center;
+   background-size: cover;
+  }
+  .box-container{
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20);
+
+  }
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ffff;
+    font-family: 'poppins-bold';
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ffff;
+  }
+  
+  .buttons-container {
+    display: flex;
+    gap: 1rem;
+
+    .btn{
+      min-width: 300px;
+      flex: 1;  
+
+      mat-icon{
+        margin-left: 5px;
+      }
+    }
+  }
+  
+  .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+  
+  .btn-outline {
+    background-color: white;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.3rem;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 768px) {
+    .buttons-container {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    h1{
+      line-height: 60px;
+    }
+  }
+  
